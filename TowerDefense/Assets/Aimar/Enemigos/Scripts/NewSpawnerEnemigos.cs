@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class NewSpawnerEnemigos : MonoBehaviour
 {
+    public UnityEvent fin;
     [System.Serializable]
     public class Oleada
     {
@@ -49,6 +51,10 @@ public class NewSpawnerEnemigos : MonoBehaviour
                     // Empezar nueva oleada
                     indiceEnemigoActual = 0;
                     oleadaEnCurso = true;
+                }
+                if (indiceOleadaActual == oleadas.Count)
+                {
+                    fin.Invoke();
                 }
             }
         }

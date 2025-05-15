@@ -20,6 +20,11 @@ public class MenuPrincipal : MonoBehaviour
         panelSeleccionNiveles.SetActive(false);
     }
 
+    // Llamado al presionar nivel 0
+    public void CargarNivel0()
+    {
+        SceneManager.LoadScene(0);
+    }
     // Llamado al presionar nivel 1
     public void CargarNivel1()
     {
