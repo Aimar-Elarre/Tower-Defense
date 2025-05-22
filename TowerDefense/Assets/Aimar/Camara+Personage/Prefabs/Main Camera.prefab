@@ -156,4 +156,4 @@ MonoBehaviour:
   zoomSpeed: 2
   minDistancia: 2
   maxDistancia: 10
-  limiteRotacion: {x: -60, y: 60}
+  limiteRotacion: {x: 0, y: 60}

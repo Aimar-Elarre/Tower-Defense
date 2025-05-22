@@ -46,7 +46,7 @@ public class TowerControler : MonoBehaviour
             torreEnSelecion.transform.position = posicion + new Vector3(0,1,0);
             if (poner)
             {
-                torreEnSelecion.transform.position = posicion + new Vector3(0, 0.75f, 0);
+                torreEnSelecion.transform.position = posicion + new Vector3(0, 0.1f, 0);
                 torreEnSelecion.transform.GetChild(0).GetComponent<CapsuleCollider>().enabled = true;
                 torreEnSelecion = null;
             }

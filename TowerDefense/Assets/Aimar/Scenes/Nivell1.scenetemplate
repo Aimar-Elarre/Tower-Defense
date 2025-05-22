@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Nivell1
   m_EditorClassIdentifier: 
   templateScene: {fileID: 102900000, guid: db4d60f0c911f8644b368739baa737c3, type: 3}
-  templateName: Template de Juego
+  templateName: 
   description: 
   preview: {fileID: 0}
   dependencies:
@@ -26,6 +26,8 @@ MonoBehaviour:
   - dependency: {fileID: 100012, guid: 6520c6d7889f4c72b416f07f34edd515, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 100000, guid: 389d5010c2746414c8d7802f26578667, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 8900000, guid: fa41734a337674542975482c8fe96ea1, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 100062, guid: 287406e12d1c4a1fad3c4e7ee6674ef0, type: 3}
     instantiationMode: 0
@@ -79,6 +81,8 @@ MonoBehaviour:
     instantiationMode: 0
   - dependency: {fileID: 5203931485905820452, guid: 0e0999aab9763964ca1b128d0b434f92, type: 3}
     instantiationMode: 0
+  - dependency: {fileID: 8900000, guid: beb1457d375110e468b8d8e1f29fccea, type: 3}
+    instantiationMode: 0
   - dependency: {fileID: 3034875124259927204, guid: 71ad30f369a17894c9967f5193e9fd88, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -107,6 +111,8 @@ MonoBehaviour:
     instantiationMode: 0
   - dependency: {fileID: 100052, guid: 599b2dc9e6c44a8ebc02ddea1f18d215, type: 3}
     instantiationMode: 0
+  - dependency: {fileID: 2100000, guid: 1cf6f4c6e6e0518419839d3f5448dd99, type: 2}
+    instantiationMode: 0
   - dependency: {fileID: 7929347039061947300, guid: cf5868506156c264faec32eea0dd3cdf, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 100000, guid: 26be381455f4a274c8688dd8ff4f5893, type: 3}
@@ -127,15 +133,15 @@ MonoBehaviour:
     instantiationMode: 0
   - dependency: {fileID: 100022, guid: 5b283b002bf74fc4b827cc4e67b99155, type: 3}
     instantiationMode: 0
-  - dependency: {fileID: 5706061757307288414, guid: dd39f14e35806a647af7c263fef3054a, type: 3}
-    instantiationMode: 0
-  - dependency: {fileID: 100058, guid: 04810a4318d746d39ffa6c64084ca93a, type: 3}
-    instantiationMode: 0
   - dependency: {fileID: 9100000, guid: 1f68948a5bb74f2fa9e9087a872750e9, type: 2}
+    instantiationMode: 0
+  - dependency: {fileID: 5706061757307288414, guid: dd39f14e35806a647af7c263fef3054a, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 1524411113276028, guid: e2aafa8770d34a9591b41bedf4e318ba, type: 3}
     instantiationMode: 0
   - dependency: {fileID: 100000, guid: 9506a8b63914f464d8847b4808103f22, type: 3}
+    instantiationMode: 0
+  - dependency: {fileID: 100058, guid: 04810a4318d746d39ffa6c64084ca93a, type: 3}
     instantiationMode: 0
   - dependency: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
     instantiationMode: 1
