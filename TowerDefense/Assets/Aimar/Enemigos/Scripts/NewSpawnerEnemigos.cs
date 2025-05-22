@@ -5,10 +5,11 @@ using UnityEngine.Events;
 public class NewSpawnerEnemigos : MonoBehaviour
 {
     public UnityEvent fin;
+
     [System.Serializable]
     public class Oleada
     {
-        public List<GameObject> enemigos; // Enemigos de esta oleada
+        public List<GameObject> enemigos;
     }
 
     public List<Oleada> oleadas;
@@ -22,14 +23,13 @@ public class NewSpawnerEnemigos : MonoBehaviour
     private List<GameObject> enemigosVivos = new List<GameObject>();
 
     private bool oleadaEnCurso = false;
+    private bool esperandoConfirmacion = true; // Para activar con botón incluso desde la primera
 
     void Update()
     {
-        // Si no quedan oleadas, termina
         if (indiceOleadaActual >= oleadas.Count)
             return;
 
-        // Si estamos en medio de una oleada, instanciar enemigos en intervalo
         if (oleadaEnCurso)
         {
             tiempo += Time.deltaTime;
@@ -40,23 +40,9 @@ public class NewSpawnerEnemigos : MonoBehaviour
                 tiempo = 0f;
             }
         }
-        else
+        else if (enemigosVivos.Count == 0 && !esperandoConfirmacion)
         {
-            // Si no quedan enemigos vivos, pasar a la siguiente oleada
-            if (enemigosVivos.Count == 0)
-            {
-                indiceOleadaActual++;
-                if (indiceOleadaActual < oleadas.Count)
-                {
-                    // Empezar nueva oleada
-                    indiceEnemigoActual = 0;
-                    oleadaEnCurso = true;
-                }
-                if (indiceOleadaActual == oleadas.Count)
-                {
-                    fin.Invoke();
-                }
-            }
+            esperandoConfirmacion = true;
         }
     }
 
@@ -84,7 +70,6 @@ public class NewSpawnerEnemigos : MonoBehaviour
 
             indiceEnemigoActual++;
 
-            // Si ya instanciamos todos los enemigos de la oleada, marcamos que la oleada terminó de spawn
             if (indiceEnemigoActual >= oleadaActual.enemigos.Count)
             {
                 oleadaEnCurso = false;
@@ -97,6 +82,25 @@ public class NewSpawnerEnemigos : MonoBehaviour
         if (enemigosVivos.Contains(enemigo))
         {
             enemigosVivos.Remove(enemigo);
+        }
+    }
+
+    // Esta función debe llamarse desde un botón UI para iniciar siguiente oleada
+    public void ConfirmarSiguienteOleada()
+    {
+        if (enemigosVivos.Count == 0 && esperandoConfirmacion)
+        {
+            indiceOleadaActual++;
+            if (indiceOleadaActual < oleadas.Count)
+            {
+                indiceEnemigoActual = 0;
+                oleadaEnCurso = true;
+                esperandoConfirmacion = false;
+            }
+            else
+            {
+                fin.Invoke(); // Se han completado todas las oleadas
+            }
         }
     }
 }
